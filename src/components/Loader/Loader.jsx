@@ -1,4 +1,5 @@
 import { Grid } from 'react-loader-spinner';
+import css from './Loader.module.css';
 
 export function Loader() {
     return (
@@ -9,7 +10,7 @@ export function Loader() {
             ariaLabel="grid-loading"
             radius="12.5"
             wrapperStyle={{}}
-            
+            wrapperClass={css.loader}
         />
     );
 }

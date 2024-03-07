@@ -1,6 +1,6 @@
-import  { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-
+import css from './Modal.module.css';
 
 export function Modal({ onClose, image }) {
   const { url, alt } = image;
@@ -17,7 +17,6 @@ export function Modal({ onClose, image }) {
     return () => {
       window.removeEventListener('keydown', keydownClick);
     };
-  
   }, []);
 
   function backdropClick(evt) {
@@ -27,8 +26,8 @@ export function Modal({ onClose, image }) {
   }
 
   return (
-    <div  onClick={backdropClick}>
-      <div>
+    <div className={css.overlay} onClick={backdropClick}>
+      <div className={css.modal}>
         <img src={url} alt={alt} />
       </div>
     </div>

@@ -1,15 +1,18 @@
+import css from './Searchbar.module.css';
 import PropTypes from 'prop-types';
 
 export function Searchbar({ onSubmit }) {
   return (
-    <header>
-      <form onSubmit={onSubmit}>
-        <button type="submit">
-          <span>Search</span>
+    <header className={css.searchbar}>
+      <form className={css.searchForm} onSubmit={onSubmit}>
+        <button type="submit" className={css.searchFormButton}>
+          <SearchIcon width="22" height="22" />
+          {/* <span className="SearchForm-button-label">Search</span> */}
         </button>
 
         <input
           name="search"
+          className={css.searchFormInput}
           type="text"
           autoComplete="off"
           autoFocus
@@ -20,6 +23,4 @@ export function Searchbar({ onSubmit }) {
   );
 }
 
-Searchbar.propTypes = {
-  onSubmit: PropTypes.func.isRequired,
-};
+Searchbar.prototype = { onSubmit: PropTypes.func.isRequired };

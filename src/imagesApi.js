@@ -16,13 +16,13 @@ export async function imagesApi({ search, page }) {
       },
     });
     if (response.status !== 200) {
-
+      // console.log('in if not200 in imagesApi');
       notificationServerError();
       return;
     }
     return response;
   } catch (error) {
-
+    // console.log('error in imagesApi', error);
     notificationServerError();
     return;
   }

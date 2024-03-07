@@ -1,37 +1,16 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+import  { useState, useEffect } from 'react';
+import * as Scroll from 'react-scroll';
 import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import { Button } from './components/Button/Button';
 import { ImageGallery } from './components/ImageGallery/ImageGallery';
 import { ImageGalleryItem } from './components/ImageGalleryItem/ImageGalleryItem';
 import { Modal } from './components/Modal/Modal';
 import { Searchbar } from './components/SearchBar/SearchBar';
+import * as message from './notification';
+import { imagesApi } from './imagesApi';
 import { Loader } from './components/Loader/Loader';
-
-axios.defaults.baseURL = 'https://pixabay.com/api/';
-
-export async function imagesApi({ search, page }) {
-  try {
-    const response = await axios.get('', {
-      params: {
-        key: 'AhhLj0dRDONF-RtR1JFfEMLloinwC9DISjhJf-DsIL4',
-        q: search,
-        image_type: 'photo',
-        orientation: 'horizontal',
-        per_page: '12',
-        page: page,
-      },
-    });
-    if (response.status !== 200) {
-      message.notificationServerError();
-      return;
-    }
-    return response;
-  } catch (error) {
-    message.notificationServerError();
-    return;
-  }
-}
 
 export function App() {
   const [search, setSearch] = useState('');
@@ -64,6 +43,7 @@ export function App() {
         setImages(prevState => [...prevState, ...images]);
         setTotalImages(totalImages);
       } catch (error) {
+        // console.log('error in newSearchRequestServer');
         message.notificationServerError();
       } finally {
         setLoading(false);
@@ -74,7 +54,7 @@ export function App() {
     newSearchRequestServer();
 
     return () => {
-
+      // ^abortController?
     };
   }, [search, page]);
 
