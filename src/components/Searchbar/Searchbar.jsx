@@ -1,47 +1,23 @@
-import { useState } from 'react';
-import PropTypes from 'prop-types';
-import {
-  SearchBarHead,
-  SearchForm,
-  SearchFormBtn,
-  SearchFormButtonLabel,
-  SearchFormInput,
-} from './Searchbar.styled';
+import React from "react";
+import style from "./SearchBar.module.css";
+import { IoMdSearch } from "react-icons/io";
 
-const SearchBar = ({ onSubmit }) => {
-  const [query, setQuery] = useState('');
-
-  const handleChange = event => setQuery(event.target.value);
-
-  const handleSubmit = event => {
-    event.preventDefault();
-    if (!query.trim()) {
-      return;
-    }
-    onSubmit(query);
-  };
-
+export const SearchBar = ({ getSearchWord }) => {
   return (
-    <SearchBarHead>
-      <SearchForm onSubmit={handleSubmit}>
-        <SearchFormBtn type="submit">
-          <SearchFormButtonLabel>Search</SearchFormButtonLabel>
-        </SearchFormBtn>
-        <SearchFormInput
-          type="text"
+    <header className={style.header}>
+      <form className={style.form} onSubmit={getSearchWord}>
+        <input
+          className={style.search}
           autoComplete="off"
+          name="search"
           autoFocus
-          placeholder="Search images and photos"
-          value={query}
-          onChange={handleChange}
+          type="text"
+          placeholder="Search images..."
         />
-      </SearchForm>
-    </SearchBarHead>
+        <button className={style.btn} type="submit">
+          <IoMdSearch className={style.icon} />
+        </button>
+      </form>
+    </header>
   );
 };
-
-SearchBar.propTypes = {
-  onSubmit: PropTypes.func.isRequired,
-};
-
-export default SearchBar;

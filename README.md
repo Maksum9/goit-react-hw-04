@@ -1,34 +1,8 @@
-Використовуй цей
-[шаблон React-проекту](https://github.com/goitacademy/react-homework-template#readme)
-як стартову точку своєї програми.
+# React + Vite
 
-# Критерії приймання
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-- При здачі домашньої роботи є посилання: на вихідні файли та робочу сторінку
-  проекту на `GitHub Pages`.
-- Під час запуску коду завдання в консолі відсутні помилки та попередження.
-- Для кожного компонента є окрема папка з файлом React-компонента та файлом
-  стилів
-- Для компонентів описані `propTypes`.
-- Імена компонентів зрозумілі та описові.
+Currently, two official plugins are available:
 
-## Віджет відгуків
-
-- Створений репозиторій `goit-react-hw-04-hooks-feedback`.
-- Проведи рефакторинг коду завдання
-  [Віджет відгуків](https://github.com/EuJinnLucaShow/goit-react-hw-02-feedback/blob/main/README.md), використовуючи
-  React-хуки.
-
-## Книга контактів
-
-- Створений репозиторій `goit-react-hw-04-hooks-phonebook`.
-- Проведи рефакторинг коду завдання
-  [Книга контактів](https://github.com/EuJinnLucaShow/goit-react-hw-03-phonebook/blob/main/README.md), використовуючи
-  React-хуки.
-
-## Пошук зображень
-
-- Створений репозиторій `goit-react-hw-04-hooks-images`.
-- Проведи рефакторинг коду завдання
-  [Пошук зображень](https://github.com/EuJinnLucaShow/goit-react-hw-03-image-finder/blob/main/README.md), використовуючи
-  React-хуки.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
