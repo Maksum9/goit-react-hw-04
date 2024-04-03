@@ -9,7 +9,7 @@ import { Loader } from "./Loader/Loader";
 import toast, { Toaster } from "react-hot-toast";
 import { ImageModal } from "./ImageModal/ImageModal";
 
-const KEY = "tPyF-JOOf607yCQmy2T4mCANWSyx1bzc-VxDCaqrUmg";
+const KEY = "AhhLj0dRDONF-RtR1JFfEMLloinwC9DISjhJf-DsIL4";
 
 export const App = () => {
   const [images, setImages] = useState([]);
